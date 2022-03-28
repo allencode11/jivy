@@ -1,10 +1,13 @@
-import { Box, Typography } from '@mui/material';
+import {
+  Box, Button, Modal, Typography,
+} from '@mui/material';
 import {
   Dispatch, SetStateAction, useEffect, useState,
 } from 'react';
 import { HomeContainer, SearchInput } from './HomePage.styles.js';
 import { CartItem } from '../../components/CartItem/cart-item.component';
 import { ICartItem } from '../../components/CartItem/cart-item.types';
+import { AddRecord } from '../ModalPages/AddRecord/AddRecord';
 
 function fetchData(setApiData: Dispatch<SetStateAction<Array<ICartItem>>>, search?: string) {
   let url = 'https://retoolapi.dev/geeOvB/data';
@@ -16,15 +19,17 @@ function fetchData(setApiData: Dispatch<SetStateAction<Array<ICartItem>>>, searc
 
 export function HomePage() {
   const [apiData, setApiData] = useState<Array<ICartItem>>([]);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState<string>('');
+  const [deleted, setDeleted] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
     fetchData(setApiData, searchValue);
-  }, [searchValue]);
+  }, [searchValue, deleted]);
 
   return (
     <HomeContainer>
-      <Box>
+      <Box style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
         <SearchInput
           value={searchValue}
           placeholder="Search..."
@@ -32,6 +37,7 @@ export function HomePage() {
             setSearchValue(e.target.value);
           }}
         />
+        <Button onClick={() => setOpen(!open)}>Add data</Button>
       </Box>
       <Box>
         {
@@ -41,6 +47,10 @@ export function HomePage() {
             : <Typography>No items were found!</Typography>
         }
       </Box>
+      <AddRecord
+        open={open}
+        setOpen={setOpen}
+      />
     </HomeContainer>
   );
 }

@@ -5,6 +5,10 @@ import { ICartItemProps } from './cart-item.types';
 import { CardItem, Title } from './cart-item.styles.js';
 
 export function CartItem({ item }: ICartItemProps) {
+  const handleDelete = (id: string | number) => {
+    fetch(`https://retoolapi.dev/geeOvB/data?id=${id}`, { method: 'DELETE' });
+  };
+
   return (
     <CardItem>
       <CardContent>
@@ -25,7 +29,15 @@ export function CartItem({ item }: ICartItemProps) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Delete</Button>
+        <Button
+          size="small"
+          onClick={() => {
+            console.log(item.id);
+            handleDelete(item.id);
+          }}
+        >
+          Delete
+        </Button>
       </CardActions>
     </CardItem>
   );
