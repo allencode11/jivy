@@ -1,5 +1,5 @@
 import {
-  Button, CardActions, Card, CardContent, Typography,
+  Button, CardActions, CardContent, Typography,
 } from '@mui/material';
 import { ICartItemProps } from './cart-item.types';
 import { CardItem, Title } from './cart-item.styles.js';
