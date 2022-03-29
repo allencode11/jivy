@@ -36,7 +36,9 @@ export const ModalBox = styled(Box)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid #000;
+  border: 2px solid #011638;
+  border-radius: 10px;
+  background-color: whitesmoke;
   boxShadow: 24px;
   min-width: 300px;
   padding: 4px;

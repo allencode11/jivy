@@ -2,8 +2,10 @@ import {
   Button, Input, Modal, Typography,
 } from '@mui/material';
 import { Dispatch, SetStateAction, useState } from 'react';
-import { ModalBox } from '../../HomePage/HomePage.styles.js';
 import { ICartItem } from '../../../components/CartItem/cart-item.types';
+import { InputData, ModalBox } from './add-record.styles.js';
+import { SButton } from '../../HomePage/HomePage.styles';
+import { MiddleText } from '../../../components/CartItem/cart-item.styles';
 
 interface IAddRecordProps {
   setOpen: Dispatch<SetStateAction<boolean>>;
@@ -42,33 +44,43 @@ export function AddRecord({ setOpen, open }: IAddRecordProps) {
       aria-describedby="modal-modal-description"
     >
       <ModalBox>
-        <Typography>Add new record!</Typography>
-        <Input
+        <MiddleText>Add new record!</MiddleText>
+        <InputData
           value={Name}
           placeholder="name"
-          onChange={(event) => setName(event.target.value)}
+          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
+            setName(event.target.value);
+          }}
         />
-        <Input
+        <InputData
           value={Email}
           placeholder="email"
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
+            setEmail(event.target.value);
+          }}
         />
-        <Input
+        <InputData
           value={City}
           placeholder="city"
-          onChange={(event) => setCity(event.target.value)}
+          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
+            setCity(event.target.value)
+          }}
         />
-        <Input
+        <InputData
           value={Job}
           placeholder="job"
-          onChange={(event) => setJob(event.target.value)}
+          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
+            setJob(event.target.value)
+          }}
         />
-        <Input
+        <InputData
           value={Phone}
           placeholder="phone"
-          onChange={(event) => setPhone(event.target.value)}
+          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
+            setPhone(event.target.value)
+          }}
         />
-        <Button onClick={() => {
+        <SButton onClick={() => {
           handleSubmit({
             Name,
             Email,
@@ -80,7 +92,7 @@ export function AddRecord({ setOpen, open }: IAddRecordProps) {
         }}
         >
           Submit
-        </Button>
+        </SButton>
       </ModalBox>
     </Modal>
   );
