@@ -39,7 +39,7 @@ export function AddRecord({ setOpen, open }: IAddRecordProps) {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'Item has been deleted',
+          title: 'Item has been added',
           showConfirmButton: false,
           timer: 1500,
         });

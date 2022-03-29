@@ -2,7 +2,8 @@
 
 React app without routing with filtering, adding and deleting functionality 
 ## Link to netlify
-https://623c35cc4b74b122a13c9a7b--mellow-horse-e25a48.netlify.app/
+https://6242b0bbc20c3a0008a1fad9--tourmaline-cuchufli-ea1dd5.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -25,17 +26,15 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 ### Useful links
 Loader from https://loading.io/css/
 
-Data from https://jsonplaceholder.typicode.com/
+Shadow effects from https://getcssscan.com/css-box-shadow-examples
+
+Alerts from https://sweetalert2.github.io/#declarative-templates
+
+Color pallet form https://coolors.co/b9d6f2-061a40-0353a4-006daa-003559
+
+### Screens
+![homepage](http://url/to/img.png)
