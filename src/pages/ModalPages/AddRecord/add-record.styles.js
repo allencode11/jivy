@@ -2,7 +2,7 @@ import { Box, Input } from '@mui/material';
 import styled from 'styled-components';
 
 export const InputData = styled(Input)`
-  min-width: 300px;
+  min-width: 250px;
   margin-bottom: 15px;
 `;
 
