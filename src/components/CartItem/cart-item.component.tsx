@@ -1,8 +1,10 @@
 import {
-  Button, CardActions, CardContent, Typography,
+  Button, CardActions, CardContent,
 } from '@mui/material';
 import { ICartItemProps } from './cart-item.types';
-import { CardItem, Title } from './cart-item.styles.js';
+import {
+  CardItem, Title, SmallText, MiddleText, BoxFlex,
+} from './cart-item.styles.js';
 
 export function CartItem({ item }: ICartItemProps) {
   const handleDelete = (id: string | number) => {
@@ -12,21 +14,27 @@ export function CartItem({ item }: ICartItemProps) {
   return (
     <CardItem>
       <CardContent>
-        <Title color="text.secondary" gutterBottom>
+        <Title>
           {item?.Name}
         </Title>
-        <Typography variant="h5" component="div">
-          {item?.Job}
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {item?.City}
-        </Typography>
-        <Typography variant="body2">
-          {item?.Email}
-        </Typography>
-        <Typography variant="body2">
-          {item?.['Phone Number']}
-        </Typography>
+        <BoxFlex>
+          <div>
+            <MiddleText variant="h5" component="div">
+              {item?.Job}
+            </MiddleText>
+            <SmallText sx={{ mb: 1.5 }} color="text.secondary">
+              {item?.City}
+            </SmallText>
+          </div>
+          <div>
+            <MiddleText>
+              {item?.Email}
+            </MiddleText>
+            <SmallText>
+              {item?.['Phone Number']}
+            </SmallText>
+          </div>
+        </BoxFlex>
       </CardContent>
       <CardActions>
         <Button
