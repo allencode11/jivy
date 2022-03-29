@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { Container, Input, Box, Button, Typography } from '@mui/material';
+import {
+  Container, Input, Box, Button, Typography,
+} from '@mui/material';
 
 export const HomeContainer = styled(Container)`
   display: flex;

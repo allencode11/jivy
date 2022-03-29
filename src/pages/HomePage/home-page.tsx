@@ -4,10 +4,10 @@ import {
 } from 'react';
 import {
   HomeContainer, SearchInput, BoxContainer, SButton, Message,
-} from './HomePage.styles.js';
+} from './home-page.styles.js';
 import { CartItem } from '../../components/CartItem/cart-item.component';
 import { ICartItem } from '../../components/CartItem/cart-item.types';
-import { AddRecord } from '../ModalPages/AddRecord/AddRecord';
+import { AddRecord } from '../ModalPages/AddRecord/add-record';
 import './Loader.css';
 
 function fetchData(setApiData: Dispatch<SetStateAction<Array<ICartItem>>>, search?: string) {

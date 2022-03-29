@@ -1,9 +1,11 @@
 import { Modal } from '@mui/material';
-import { Dispatch, SetStateAction, useState } from 'react';
+import {
+  Dispatch, SetStateAction, useState, FormEvent,
+} from 'react';
 import Swal from 'sweetalert2';
 import { ICartItem } from '../../../components/CartItem/cart-item.types';
 import { InputData, ModalBox } from './add-record.styles.js';
-import { SButton } from '../../HomePage/HomePage.styles.js';
+import { SButton } from '../../HomePage/home-page.styles.js';
 import { MiddleText } from '../../../components/CartItem/cart-item.styles.js';
 
 interface IAddRecordProps {
@@ -41,6 +43,7 @@ export function AddRecord({ setOpen, open }: IAddRecordProps) {
           showConfirmButton: false,
           timer: 1500,
         });
+        setOpen(!open);
       }
     });
   };
@@ -57,36 +60,36 @@ export function AddRecord({ setOpen, open }: IAddRecordProps) {
         <InputData
           value={Name}
           placeholder="name"
-          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setName(event.target.value);
+          onChange={(event: FormEvent<HTMLInputElement>) => {
+            setName(event.currentTarget.value);
           }}
         />
         <InputData
           value={Email}
           placeholder="email"
-          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setEmail(event.target.value);
+          onChange={(event: FormEvent<HTMLInputElement>) => {
+            setEmail(event.currentTarget.value);
           }}
         />
         <InputData
           value={City}
           placeholder="city"
-          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setCity(event.target.value);
+          onChange={(event: FormEvent<HTMLInputElement>) => {
+            setCity(event.currentTarget.value);
           }}
         />
         <InputData
           value={Job}
           placeholder="job"
-          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setJob(event.target.value);
+          onChange={(event: FormEvent<HTMLInputElement>) => {
+            setJob(event.currentTarget.value);
           }}
         />
         <InputData
           value={Phone}
           placeholder="phone"
-          onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setPhone(event.target.value);
+          onChange={(event: FormEvent<HTMLInputElement>) => {
+            setPhone(event.currentTarget.value);
           }}
         />
         <SButton onClick={() => {

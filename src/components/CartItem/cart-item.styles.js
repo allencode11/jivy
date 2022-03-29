@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Typography, Card, Box, Button } from '@mui/material';
+import { Typography, Card, Box } from '@mui/material';
 
 export const CardItem = styled(Card)`
   margin-top: 8px !important;
@@ -28,4 +28,3 @@ export const BoxFlex = styled(Box)`
   flex-direction: row;
   justify-content: space-between;
 `;
-

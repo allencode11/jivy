@@ -4,7 +4,7 @@ import { ICartItemProps } from './cart-item.types';
 import {
   CardItem, Title, SmallText, MiddleText, BoxFlex,
 } from './cart-item.styles.js';
-import { SButton } from '../../pages/HomePage/HomePage.styles.js';
+import { SButton } from '../../pages/HomePage/home-page.styles.js';
 
 export function CartItem({ item }: ICartItemProps) {
   const handleDelete = (id: string | number) => {
