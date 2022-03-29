@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, Input, Box, Button } from '@mui/material';
+import { Container, Input, Box, Button, Typography } from '@mui/material';
 
 export const HomeContainer = styled(Container)`
   display: flex;
@@ -44,4 +44,10 @@ export const ModalBox = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+export const Message = styled(Typography)`
+  font-size: 25px !important;
+  margin-top: 10px !important;
+  color: #011638 !important;
 `;

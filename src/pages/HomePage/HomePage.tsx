@@ -1,9 +1,9 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import {
   Dispatch, SetStateAction, useEffect, useState,
 } from 'react';
 import {
-  HomeContainer, SearchInput, BoxContainer, SButton,
+  HomeContainer, SearchInput, BoxContainer, SButton, Message,
 } from './HomePage.styles.js';
 import { CartItem } from '../../components/CartItem/cart-item.component';
 import { ICartItem } from '../../components/CartItem/cart-item.types';
@@ -58,7 +58,7 @@ export function HomePage() {
                   <div />
                 </div>
               )
-              : (<Typography>No items were found!</Typography>)
+              : (<Message>No items were found!</Message>)
         }
       </Box>
       <AddRecord
