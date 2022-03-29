@@ -36,5 +36,9 @@ Alerts from https://sweetalert2.github.io/#declarative-templates
 
 Color pallet form https://coolors.co/b9d6f2-061a40-0353a4-006daa-003559
 
+Images: https://imgbb.com/
+
 ### Screens
-![homepage](http://url/to/img.png)
+![homepage](https://i.ibb.co/1rT1G6G/Screenshot-2022-03-29-at-10-19-10.png)
+![delete-alert](https://i.ibb.co/vmh3YtR/Screenshot-2022-03-29-at-10-19-24.png)
+![add-modal](https://i.ibb.co/6NwCkhm/Screenshot-2022-03-29-at-10-19-57.png)
