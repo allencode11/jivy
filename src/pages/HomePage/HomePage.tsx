@@ -1,10 +1,10 @@
-import {
-  Box, Button, Typography,
-} from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import {
   Dispatch, SetStateAction, useEffect, useState,
 } from 'react';
-import { HomeContainer, SearchInput, BoxContainer, SearchButton } from './HomePage.styles.js';
+import {
+  HomeContainer, SearchInput, BoxContainer, SButton,
+} from './HomePage.styles.js';
 import { CartItem } from '../../components/CartItem/cart-item.component';
 import { ICartItem } from '../../components/CartItem/cart-item.types';
 import { AddRecord } from '../ModalPages/AddRecord/AddRecord';
@@ -37,7 +37,7 @@ export function HomePage() {
             setSearchValue(e.target.value);
           }}
         />
-        <SearchButton onClick={() => setOpen(!open)}>Add data</SearchButton>
+        <SButton onClick={() => setOpen(!open)}>Add data</SButton>
       </BoxContainer>
       <Box>
         {

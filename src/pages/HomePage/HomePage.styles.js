@@ -15,7 +15,7 @@ export const SearchInput = styled(Input)`
   color: #011638;
 `;
 
-export const SearchButton = styled(Button)`
+export const SButton = styled(Button)`
   width: 175px;
   height: 35px;
   padding: 8px;
