@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const InputData = styled(Input)`
   min-width: 400px;
+  margin-bottom: 15px;
 `;
 
 export const ModalBox = styled(Box)`

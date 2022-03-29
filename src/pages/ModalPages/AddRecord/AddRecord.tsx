@@ -1,11 +1,10 @@
-import {
-  Button, Input, Modal, Typography,
-} from '@mui/material';
+import { Modal } from '@mui/material';
 import { Dispatch, SetStateAction, useState } from 'react';
+import Swal from 'sweetalert2';
 import { ICartItem } from '../../../components/CartItem/cart-item.types';
 import { InputData, ModalBox } from './add-record.styles.js';
-import { SButton } from '../../HomePage/HomePage.styles';
-import { MiddleText } from '../../../components/CartItem/cart-item.styles';
+import { SButton } from '../../HomePage/HomePage.styles.js';
+import { MiddleText } from '../../../components/CartItem/cart-item.styles.js';
 
 interface IAddRecordProps {
   setOpen: Dispatch<SetStateAction<boolean>>;
@@ -33,6 +32,16 @@ export function AddRecord({ setOpen, open }: IAddRecordProps) {
       headers: myHeaders,
       body: raw,
       redirect: 'follow',
+    }).then((result) => {
+      if (result) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Item has been deleted',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
     });
   };
 
@@ -63,32 +72,40 @@ export function AddRecord({ setOpen, open }: IAddRecordProps) {
           value={City}
           placeholder="city"
           onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setCity(event.target.value)
+            setCity(event.target.value);
           }}
         />
         <InputData
           value={Job}
           placeholder="job"
           onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setJob(event.target.value)
+            setJob(event.target.value);
           }}
         />
         <InputData
           value={Phone}
           placeholder="phone"
           onChange={(event: { target: { value: SetStateAction<string>; }; }) => {
-            setPhone(event.target.value)
+            setPhone(event.target.value);
           }}
         />
         <SButton onClick={() => {
-          handleSubmit({
-            Name,
-            Email,
-            City,
-            Job,
-            'Phone Number': Phone,
-          });
-          setOpen(!open);
+          try {
+            handleSubmit({
+              Name,
+              Email,
+              City,
+              Job,
+              'Phone Number': Phone,
+            });
+          } catch (e) {
+            console.error();
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            });
+          }
         }}
         >
           Submit
