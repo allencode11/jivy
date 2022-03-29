@@ -4,7 +4,7 @@ import {
 import {
   Dispatch, SetStateAction, useEffect, useState,
 } from 'react';
-import { HomeContainer, SearchInput } from './HomePage.styles.js';
+import { HomeContainer, SearchInput, BoxContainer, SearchButton } from './HomePage.styles.js';
 import { CartItem } from '../../components/CartItem/cart-item.component';
 import { ICartItem } from '../../components/CartItem/cart-item.types';
 import { AddRecord } from '../ModalPages/AddRecord/AddRecord';
@@ -29,7 +29,7 @@ export function HomePage() {
 
   return (
     <HomeContainer>
-      <Box style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
+      <BoxContainer>
         <SearchInput
           value={searchValue}
           placeholder="Search..."
@@ -37,8 +37,8 @@ export function HomePage() {
             setSearchValue(e.target.value);
           }}
         />
-        <Button onClick={() => setOpen(!open)}>Add data</Button>
-      </Box>
+        <SearchButton onClick={() => setOpen(!open)}>Add data</SearchButton>
+      </BoxContainer>
       <Box>
         {
           // eslint-disable-next-line no-nested-ternary
